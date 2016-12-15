@@ -10,8 +10,8 @@ ruby_block 'Printing variables' do
     application = params[:app]
     deploy = params[:deploy_data]
 
-    Chef::Log.debug("salviano Application data: #{application}")
-    Chef::Log.debug("salviano Deploy data: #{deploy}")
+    puts "salviano Application data: #{application}"
+    puts "salviano Deploy data: #{deploy}"
   end
   action :run
 end
