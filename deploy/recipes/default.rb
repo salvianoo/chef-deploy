@@ -5,17 +5,15 @@ directory '/var/www/api' do
   action :create
 end
 
-deploy_revision '/var/www/api' do
+deploy_revision "/var/www/api" do
+  repo 'https://github.com/salvianoo/angular-node-seed.git'
+  user 'ubuntu'
+  keep_releases 10
+  action :deploy
+  migrate false
   symlink_before_migrate.clear
-  create_dirs_before_symlink.clear
+  create_dirs_before_symlink
   purge_before_symlink.clear
   symlinks.clear
-end
-
-deploy 'api laravel' do
-  repo 'https://github.com/salvianoo/angular-node-seed.git'
-  user 'www-data'
-  group 'www-data'
-  deploy_to '/var/www/api'
-  action :deploy
+  symlinks {}
 end
