@@ -15,15 +15,20 @@ end
 #   action :run
 # end
 
-deploy_revision "/var/www/api" do
-  repo node["deploy"]["appshortname"]["scm"]["repository"]
-  user 'www-data'
-  keep_releases 5
-  action :deploy
-  migrate false
-  symlink_before_migrate.clear
-  create_dirs_before_symlink
-  purge_before_symlink.clear
-  symlinks.clear
-  symlinks {}
+node[:deploy].each do |application, deploy|
+  deploy = node[:deploy][application]
+  puts "salviano ---- #{deploy}"
 end
+
+# deploy_revision "/var/www/api" do
+#   repo node["deploy"]["appshortname"]["scm"]["repository"]
+#   user 'www-data'
+#   keep_releases 5
+#   action :deploy
+#   migrate false
+#   symlink_before_migrate.clear
+#   create_dirs_before_symlink
+#   purge_before_symlink.clear
+#   symlinks.clear
+#   symlinks {}
+# end
