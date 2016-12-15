@@ -6,4 +6,4 @@
 #   action :deploy
 # end
 
-node['deploy']['appshortname']
+puts node['deploy']
