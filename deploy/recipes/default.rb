@@ -1,9 +1,7 @@
-# deploy 'private_repo' do
-#   repo 'git@github.com:acctname/private-repo.git'
-#   user 'ubuntu'
-#   deploy_to '/tmp/private_code'
-#   ssh_wrapper '/tmp/private_code/wrap-ssh4git.sh'
-#   action :deploy
-# end
-
-puts node['deploy']
+deploy 'api laravel' do
+  repo 'https://github.com/salvianoo/angular-node-seed.git'
+  user 'www-data'
+  group 'www-data'
+  deploy_to '/var/www/api'
+  action :deploy
+end
