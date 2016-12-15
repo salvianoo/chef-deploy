@@ -12,3 +12,10 @@ deploy 'api laravel' do
   deploy_to '/var/www/api'
   action :deploy
 end
+
+deploy_revision '/var/www/api' do
+  symlink_before_migrate.clear
+  create_dirs_before_symlink.clear
+  purge_before_symlink.clear
+  symlinks.clear
+end
