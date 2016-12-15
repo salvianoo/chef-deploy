@@ -6,8 +6,8 @@ directory '/var/www/api' do
 end
 
 deploy_revision "/var/www/api" do
-  repo 'https://github.com/salvianoo/angular-node-seed.git'
-  user 'ubuntu'
+  repo node['deploy']['api_fretes']['scm']['repository']
+  user 'www-data'
   keep_releases 10
   action :deploy
   migrate false
