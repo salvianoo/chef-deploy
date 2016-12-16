@@ -21,7 +21,7 @@ node[:deploy].each do |application, deploy|
   puts "salviano ---- #{deploy}"
 
   deploy_revision "/var/www/api" do
-    repo deploy["api_fretes2"]["scm"]["repository"]
+    repo deploy["scm"]["repository"]
     user 'www-data'
     keep_releases 5
     action :deploy
