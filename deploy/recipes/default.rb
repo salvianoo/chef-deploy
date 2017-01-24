@@ -11,14 +11,14 @@ node[:deploy].each do |application, deploy|
     app application
   end
 
-  template "#{deploy[:deploy_to]}/current/.env" do
-    source 'env.erb'
-    mode '0660'
-    owner 'deploy'
-    group 'www-data'
-    variables(
-      :env => deploy[:environment_variables]
-    )
-  end
+  #template "#{deploy[:deploy_to]}/current/.env" do
+    #source 'env.erb'
+    #mode '0660'
+    #owner 'deploy'
+    #group 'www-data'
+    #variables(
+      #:env => deploy[:environment_variables]
+    #)
+  #end
 
 end
