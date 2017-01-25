@@ -35,7 +35,7 @@ node[:deploy].each do |application, deploy|
     "#{doc_root}/bootstrap/cache",
   ].each do |folder_name|
     directory folder_name do
-      mode '0755'
+      mode '0777'
       owner 'deploy'
       group 'www-data'
     end
